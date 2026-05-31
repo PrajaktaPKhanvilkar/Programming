@@ -1,11 +1,8 @@
 #include<stdio.h>
 
-void DisplayPateern(int iNo){
+void DisplayNegToPos(int iNo){
     int iCnt = 0;
-    if(iNo < 0){
-        iNo = -iNo;
-    }
-    for(iCnt = 1; iCnt <= iNo; iCnt++){
+    for(iCnt = -iNo; iCnt <= iNo; iCnt++){
         printf("%d\t",iCnt);
     }
 }
@@ -14,6 +11,6 @@ int main(){
     int iValue =0;
     printf("Enter a number :\n");
     scanf("%d",&iValue);
-    DisplayPateern(iValue);
+    DisplayNegToPos(iValue);
     return 0;
 }

@@ -1,12 +1,18 @@
 #include<stdio.h>
+#include<ctype.h>
 
 void Display(char cValue){
     char cChar = '\0';
     if(cValue >= 'A' && cValue <= 'Z'){
-        cChar = cValue.toLowerCase();
+        cChar = tolower((unsigned char)cValue);
     }
     else if(cValue >= 'a' && cValue <= 'z'){
-        cChar = cValue.toUpperCase();
+        cChar = toupper((unsigned char)cValue);
+    }
+    if(cChar != '\0'){
+        printf("Converted character: %c\n", cChar);
+    } else {
+        printf("Not an alphabetic character.\n");
     }
 }
 int main(){
