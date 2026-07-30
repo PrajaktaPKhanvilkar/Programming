@@ -5,33 +5,29 @@
 
 #define BUFFER_SIZE 1024
 
-void DisplayFIle(char FileName[], int iNo){
+int CalculateFileSize(char FileName[]){
     char Buffer [BUFFER_SIZE] = {'\0'};
-    int iRet =0,fd =0 ;
+    int iRet =0,fd =0, iSize =0;
     fd=open(FileName,O_RDONLY);
     if(fd== -1){
         printf("unable to open file \n");
-        return;
+        return -1;
     }
     while((iRet = read(fd,Buffer,sizeof(Buffer))) != 0){
-         for(int i =0;i<iRet;i++){
-            if(i!=iNo){
-               write(1,Buffer,iRet);
-            }
-        }
+        iSize = iSize + iRet;
         memset(Buffer,'\0',sizeof(Buffer));
     }
+    return iSize;
     close(fd);
 }
 int main()
 {
     printf("Enter a File Name\n");
     char Fname[30] = {'\0'};
-    int iValue;
+    int iRes = 0;
     scanf("%[^'\n']s", Fname);
-    printf("Enter the Number of Char to be Displayed");
-    scanf("%d",iValue);
-
-    DisplayFIle(Fname, iValue);
+    // DisplayFIle(Fname);
+    iRes = CalculateFileSize(Fname);
+    printf("Size of file is: %d\n",iRes);
     return 0;
 }
