@@ -1,0 +1,10 @@
+File Name: 
+C.txtFile Size: 
+30Data: 
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCFile Name: 
+B.txtFile Size: 
+20Data: 
+BBBBBBBBBBBBBBBBBBBBFile Name: 
+A.txtFile Size: 
+10Data: 
+AAAAAAAAAA
