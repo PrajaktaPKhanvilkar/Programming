@@ -1,0 +1,38 @@
+//Strong Number
+//145 == !1 + !4 + !5 is strong number 
+
+import java.io.*;
+
+public class StrongNumber
+ {
+    public static void main(String A[]) throws Exception {
+        int iNo = 0, iDigit = 0, iTemp = 0;
+        long iFact = 0, iSum = 0;
+        BufferedReader bobj = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("Enter Number :");
+        iNo = Integer.parseInt(bobj.readLine());
+
+        iFact = 1;
+        iTemp = iNo;
+        
+        while (iNo != 0) {
+            iDigit = iNo % 10;
+
+            while (iDigit != 0) {
+                iFact = iFact * iDigit;
+                iDigit--;
+            }
+
+            iSum = iSum + iFact;
+            iNo = iNo / 10;
+            iFact=1;
+        }
+
+        if (iSum == iTemp) {
+            System.out.println("Number is Strong Number");
+        } else {
+            System.out.println("Number is not Strong Number");
+        }
+    }
+}
