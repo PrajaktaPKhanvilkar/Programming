@@ -1,0 +1,30 @@
+
+import java.util.*;
+
+public class frequencyOfEachWord
+{
+    public static void main(String A[]) {
+        Scanner sobj = new Scanner(System.in);
+
+        HashMap<String, Integer> hobj = new HashMap<String, Integer>();
+
+        System.out.println("Enter String: ");
+        String str = sobj.nextLine();
+
+        str = str.trim();
+        str = str.replaceAll("\\s+", " ");
+        String tokens[] = str.split(" ");
+        for(String s: tokens){
+            if(hobj.containsKey(s)){
+                hobj.put(s, hobj.get(s) +1);
+            }else{
+                hobj.put(s, 1);
+            }
+        }
+        System.out.println("frequency of each word is:");
+
+        for(String sValue : hobj.keySet()){
+            System.out.println(sValue+" : "+hobj.get(sValue));
+        }
+    }
+}
